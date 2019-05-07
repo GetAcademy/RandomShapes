@@ -27,7 +27,8 @@ namespace RandomBoxes
         {
             var random = new Random();
             var shapes = new Shape[5];
-            for (var i = 0; i < shapes.Length; i++)
+            shapes[0] = new Text(10, 5, "Hurra!", random);
+            for (var i = 1; i < shapes.Length; i++)
             {
                 if (random.Next(0, 2) == 0)
                     shapes[i] = new Rectangle(random, _width, _height);
