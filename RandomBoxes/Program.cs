@@ -11,7 +11,7 @@ namespace RandomBoxes
         static void Main(string[] args)
         {
             var shapes = CreateShapes();
-            var n = 5;
+            var n = 20;
             while (n-- > 0)
             {
                 Show(shapes);
@@ -19,7 +19,7 @@ namespace RandomBoxes
                 {
                     shape.Move();
                 }
-                Thread.Sleep(2000);
+                Thread.Sleep(400);
             }
         }
 
@@ -27,8 +27,7 @@ namespace RandomBoxes
         {
             var random = new Random();
             var shapes = new Shape[5];
-            shapes[0] = new Text(10, 5, "Hurra!", random);
-            for (var i = 1; i < shapes.Length; i++)
+            for (var i = 0; i < shapes.Length; i++)
             {
                 if (random.Next(0, 2) == 0)
                     shapes[i] = new Rectangle(random, _width, _height);
